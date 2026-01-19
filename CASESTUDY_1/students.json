@@ -1,0 +1,30 @@
+[
+    {
+        "pid": "1",
+        "name": "arjun",
+        "department": "cse",
+        "semester": 4,
+        "_marks": [
+            100,
+            100,
+            100,
+            100,
+            100
+        ],
+        "courses": []
+    },
+    {
+        "pid": "2",
+        "name": "kartik",
+        "department": "cse",
+        "semester": 4,
+        "_marks": [
+            99,
+            99,
+            99,
+            99,
+            99
+        ],
+        "courses": []
+    }
+]
