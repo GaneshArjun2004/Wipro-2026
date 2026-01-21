@@ -15,38 +15,63 @@ while True:
 
     try:
         if choice == "1":
-            sid = input()
-            name = input()
-            dept = input()
-            sem = int(input())
-            marks = list(map(int, input().split()))
+            print("\n Enter Student Details")
+            sid = input("Student ID: ")
+            name = input("Student Name: ")
+            dept = input("Department: ")
+            sem = int(input("Semester: "))
+            marks = list(map(int, input("Enter student marks: ").split()))
+
             students.append(Student(sid, name, dept, sem, marks))
-            print("Student Created Successfully")
+
+            print("\nStudent details added")
+            print("ID        :", sid)
+            print("Name      :", name)
+            print("Department:", dept)
+            print("Semester  :", sem)
 
         elif choice == "2":
-            fid = input()
-            name = input()
-            dept = input()
-            sal = int(input())
+            print("\n...Enter Faculty Details....")
+            fid = input("Faculty ID: ")
+            name = input("Faculty Name: ")
+            dept = input("Department: ")
+            sal = int(input("Monthly Salary: "))
+
             faculty_list.append(Faculty(fid, name, dept, sal))
-            print("Faculty Created Successfully")
+
+            print("\nFaculty added")
+            print("ID        :", fid)
+            print("Name      :", name)
+            print("Department:", dept)
 
         elif choice == "3":
-            code = input()
-            cname = input()
-            credits = int(input())
-            fid = input()
+            print("\n....Enter Course Details....")
+            code = input("Course Code: ")
+            cname = input("Course Name: ")
+            credits = int(input("Credits: "))
+            fid = input("Faculty ID: ")
+
             fac = next(f for f in faculty_list if f.pid == fid)
             courses.append(Course(code, cname, credits, fac))
-            print("Course Added Successfully")
+
+            print("\ncourse added")
+            print("Course Code :", code)
+            print("Course Name :", cname)
+            print("Credits     :", credits)
+            print("Faculty     :", fac.name)
+        
+        elif choice == "4":
+            print('\n student enrolled')
 
         elif choice == "5":
             students[0].calculate_performance()
 
         elif choice == "6":
+            print('\n compating students')
             print(students[0] > students[1])
 
         elif choice == "7":
+            print('\n generated students')
             for s in student_generator(students):
                 print(s)
             generate_csv(students)
