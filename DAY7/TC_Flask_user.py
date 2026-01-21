@@ -1,25 +1,26 @@
-from flask import Flask,request,jsonify
+from flask import Flask, jsonify
 
-app=Flask(__name__)
+app1 = Flask(__name__)
 
-users=[{"id":1,"name": "Raja"},
-       {"id": 2, "name": "Rama"} ]
+users = [
+    {"id": 1, "name": "Raja"},
+    {"id": 2, "name": "Rama"}
+]
 
-@app.route("/",methods=["Get"])
+@app1.route("/", methods=["GET"])
 def home():
-    return  "Welcome"
+    return "Welcome"
 
-@app.route("/users",methods=["Get"])
+@app1.route("/users", methods=["GET"])
 def get_users():
-    return  jsonify(users)
+    return jsonify(users)
 
-@app.route("/users/<int:user_id>",methods=["Get"])
+@app1.route("/users/<int:user_id>", methods=["GET"])
 def get_user(user_id):
-
     for user in users:
-        if user["id"]==user_id:
+        if user["id"] == user_id:
             return jsonify(user)
-    return jsonify({"message":"user not found"}),404
+    return jsonify({"message": "User not found"}), 404
 
-if __name__=="__main__":
-    app.run(debug=True)
+if __name__ == "__main__":
+    app1.run(debug=True)
