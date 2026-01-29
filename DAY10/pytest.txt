@@ -1,0 +1,10 @@
+python -m venv venv456
+.\venv456\Scripts\activate
+pip install pytest
+
+pytest -s
+
+
+
+test_file1.py .      → 1 test passed in that file
+test_file2.py ..     → 2 tests passed in that file

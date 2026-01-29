@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-29T18:22:13.035064" rpa="false" schemaversion="5">
+<suite id="s1" name="Gitfiles" source="C:\Gitfiles">
+<suite id="s1-s1" name="DAY12" source="C:\Gitfiles\DAY12">
+<suite id="s1-s1-s1" name="DAY12lab" source="C:\Gitfiles\DAY12\DAY12lab">
+<suite id="s1-s1-s1-s1" name="Q1 Basic" source="C:\Gitfiles\DAY12\DAY12lab\q1_basic.robot">
+<test id="s1-s1-s1-s1-t1" name="Test Case One" line="9">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T18:22:13.269767" level="INFO">Hello Arjun</msg>
+<arg>Hello ${NAME}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T18:22:13.269159" elapsed="0.000829"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Numbers: ${NUMS}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T18:22:13.270391" elapsed="0.000535"/>
+</kw>
+<status status="PASS" start="2026-01-29T18:22:13.266346" elapsed="0.004826"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Test Case Two" line="13">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-01-29T18:22:13.275918" level="INFO">Second test running</msg>
+<arg>Second test running</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-01-29T18:22:13.275534" elapsed="0.000637"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Test completed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T18:22:13.276403" elapsed="0.000445"/>
+</kw>
+<status status="PASS" start="2026-01-29T18:22:13.273471" elapsed="0.003599"/>
+</test>
+<status status="PASS" start="2026-01-29T18:22:13.085218" elapsed="0.204443"/>
+</suite>
+<status status="PASS" start="2026-01-29T18:22:13.081166" elapsed="0.212032"/>
+</suite>
+<status status="PASS" start="2026-01-29T18:22:13.070788" elapsed="0.224847"/>
+</suite>
+<status status="PASS" start="2026-01-29T18:22:13.040131" elapsed="0.264000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Gitfiles" id="s1" pass="2" fail="0" skip="0">Gitfiles</stat>
+<stat name="DAY12" id="s1-s1" pass="2" fail="0" skip="0">Gitfiles.DAY12</stat>
+<stat name="DAY12lab" id="s1-s1-s1" pass="2" fail="0" skip="0">Gitfiles.DAY12.DAY12lab</stat>
+<stat name="Q1 Basic" id="s1-s1-s1-s1" pass="2" fail="0" skip="0">Gitfiles.DAY12.DAY12lab.Q1 Basic</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
