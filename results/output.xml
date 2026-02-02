@@ -1,58 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-01-29T18:22:13.035064" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-02T16:24:03.082476" rpa="false" schemaversion="5">
 <suite id="s1" name="Gitfiles" source="C:\Gitfiles">
-<suite id="s1-s1" name="DAY12" source="C:\Gitfiles\DAY12">
-<suite id="s1-s1-s1" name="DAY12lab" source="C:\Gitfiles\DAY12\DAY12lab">
-<suite id="s1-s1-s1-s1" name="Q1 Basic" source="C:\Gitfiles\DAY12\DAY12lab\q1_basic.robot">
-<test id="s1-s1-s1-s1-t1" name="Test Case One" line="9">
+<suite id="s1-s1" name="DAY14" source="C:\Gitfiles\DAY14">
+<suite id="s1-s1-s1" name="DAY14lab" source="C:\Gitfiles\DAY14\DAY14lab">
+<suite id="s1-s1-s1-s1" name="Q1robot" source="C:\Gitfiles\DAY14\DAY14lab\Q1robot.robot">
+<kw name="Setup Suite" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T18:22:13.269767" level="INFO">Hello Arjun</msg>
-<arg>Hello ${NAME}</arg>
+<msg time="2026-02-02T16:24:03.454270" level="INFO">Suite setup started</msg>
+<arg>Suite setup started</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T18:22:13.269159" elapsed="0.000829"/>
+<status status="PASS" start="2026-02-02T16:24:03.453591" elapsed="0.000937"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:24:03.452495" elapsed="0.002510"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Verify Get_User" line="26">
+<kw name="Setup Test" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T16:24:03.461471" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T16:24:03.461103" elapsed="0.000857"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:24:03.460643" elapsed="0.001465"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T16:24:05.521722" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
+<msg time="2026-02-02T16:24:07.789164" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
+<msg time="2026-02-02T16:24:10.241234" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
+<msg time="2026-02-02T16:24:12.302225" level="FAIL">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /users (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2026-02-02T16:24:03.462399" elapsed="8.862029">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /users (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" start="2026-02-02T16:24:12.324847" elapsed="0.000193"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2026-02-02T16:24:12.325426" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<var>${res_json}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="NOT RUN" start="2026-02-02T16:24:12.325276" elapsed="0.006105"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>Numbers: ${NUMS}</arg>
+<arg>${res_json}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T18:22:13.270391" elapsed="0.000535"/>
+<status status="NOT RUN" start="2026-02-02T16:24:12.331689" elapsed="0.000229"/>
 </kw>
-<status status="PASS" start="2026-01-29T18:22:13.266346" elapsed="0.004826"/>
-</test>
-<test id="s1-s1-s1-s1-t2" name="Test Case Two" line="13">
+<kw name="Teardown Test" type="TEARDOWN">
 <kw name="Log" owner="BuiltIn">
-<msg time="2026-01-29T18:22:13.275918" level="INFO">Second test running</msg>
-<arg>Second test running</arg>
+<msg time="2026-02-02T16:24:12.333394" level="INFO">Test teardown completed</msg>
+<arg>Test teardown completed</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-01-29T18:22:13.275534" elapsed="0.000637"/>
+<status status="PASS" start="2026-02-02T16:24:12.332985" elapsed="0.000632"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Test completed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-01-29T18:22:13.276403" elapsed="0.000445"/>
+<status status="PASS" start="2026-02-02T16:24:12.332412" elapsed="0.001316"/>
 </kw>
-<status status="PASS" start="2026-01-29T18:22:13.273471" elapsed="0.003599"/>
+<tag>api</tag>
+<tag>smoke</tag>
+<status status="FAIL" start="2026-02-02T16:24:03.455127" elapsed="8.878840">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /users (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
 </test>
-<status status="PASS" start="2026-01-29T18:22:13.085218" elapsed="0.204443"/>
+<kw name="Teardown Suite" type="TEARDOWN">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T16:24:12.345574" level="INFO">Suite teardown completed</msg>
+<arg>Suite teardown completed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T16:24:12.345200" elapsed="0.000638"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:24:12.344796" elapsed="0.001149"/>
+</kw>
+<status status="FAIL" start="2026-02-02T16:24:03.188235" elapsed="9.157761"/>
 </suite>
-<status status="PASS" start="2026-01-29T18:22:13.081166" elapsed="0.212032"/>
+<status status="FAIL" start="2026-02-02T16:24:03.180691" elapsed="9.168628"/>
 </suite>
-<status status="PASS" start="2026-01-29T18:22:13.070788" elapsed="0.224847"/>
+<status status="FAIL" start="2026-02-02T16:24:03.172189" elapsed="9.181135"/>
 </suite>
-<status status="PASS" start="2026-01-29T18:22:13.040131" elapsed="0.264000"/>
+<status status="FAIL" start="2026-02-02T16:24:03.095842" elapsed="9.265828"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="0" fail="1" skip="0">api</stat>
+<stat pass="0" fail="1" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="Gitfiles" id="s1" pass="2" fail="0" skip="0">Gitfiles</stat>
-<stat name="DAY12" id="s1-s1" pass="2" fail="0" skip="0">Gitfiles.DAY12</stat>
-<stat name="DAY12lab" id="s1-s1-s1" pass="2" fail="0" skip="0">Gitfiles.DAY12.DAY12lab</stat>
-<stat name="Q1 Basic" id="s1-s1-s1-s1" pass="2" fail="0" skip="0">Gitfiles.DAY12.DAY12lab.Q1 Basic</stat>
+<stat name="Gitfiles" id="s1" pass="0" fail="1" skip="0">Gitfiles</stat>
+<stat name="DAY14" id="s1-s1" pass="0" fail="1" skip="0">Gitfiles.DAY14</stat>
+<stat name="DAY14lab" id="s1-s1-s1" pass="0" fail="1" skip="0">Gitfiles.DAY14.DAY14lab</stat>
+<stat name="Q1robot" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Gitfiles.DAY14.DAY14lab.Q1robot</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-02-02T16:24:05.521722" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
+<msg time="2026-02-02T16:24:07.789164" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
+<msg time="2026-02-02T16:24:10.241234" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
+<msg time="2026-02-02T16:24:12.325426" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>

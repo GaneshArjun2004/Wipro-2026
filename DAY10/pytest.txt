@@ -1,5 +1,6 @@
 python -m venv venv456
 .\venv456\Scripts\activate
+.\venv456\Scripts\activate
 pip install pytest
 
 pytest -s

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-02T16:31:28.218049" rpa="false" schemaversion="5">
+<suite id="s1" name="Q2website" source="C:\Gitfiles\DAY14\DAY14lab\Q2website.robot">
+<test id="s1-t1" name="Form Interaction Using BuiltIn Keywords" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:28.529387" level="INFO">Opening browser 'chrome' to base url 'https://tutorialsninja.com/demo/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-02T16:31:28.529064" elapsed="11.202043"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-02-02T16:31:39.731609" elapsed="0.035413"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:39.767951" level="INFO">Clicking element 'xpath=//a[@title='My Account']'.</msg>
+<arg>xpath=//a[@title='My Account']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:39.767489" elapsed="0.071458"/>
+</kw>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:39.839683" level="INFO">Clicking link 'Register'.</msg>
+<arg>Register</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:39.839354" elapsed="0.305565"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.145506" level="INFO">Typing text 'arjun' into text field 'id=input-firstname'.</msg>
+<arg>id=input-firstname</arg>
+<arg>arjun</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.145230" elapsed="0.084012"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.229887" level="INFO">Typing text 'ram' into text field 'id=input-lastname'.</msg>
+<arg>id=input-lastname</arg>
+<arg>ram</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.229597" elapsed="0.064085"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.294451" level="INFO">Typing text 'arjunram@mail.com' into text field 'id=input-email'.</msg>
+<arg>id=input-email</arg>
+<arg>arjunram@mail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.294092" elapsed="0.063040"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.357955" level="INFO">Typing text '9876543210' into text field 'id=input-telephone'.</msg>
+<arg>id=input-telephone</arg>
+<arg>9876543210</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.357614" elapsed="0.069681"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.427863" level="INFO">Typing text 'Test@123' into text field 'id=input-password'.</msg>
+<arg>id=input-password</arg>
+<arg>Test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.427624" elapsed="0.067982"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.496371" level="INFO">Typing text 'Test@123' into text field 'id=input-confirm'.</msg>
+<arg>id=input-confirm</arg>
+<arg>Test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.496093" elapsed="0.062936"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.559710" level="INFO">Clicking element 'xpath=//input[@name='newsletter' and @value='0']'.</msg>
+<arg>xpath=//input[@name='newsletter' and @value='0']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.559410" elapsed="0.054178"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:40.614254" level="INFO">Clicking element 'name=agree'.</msg>
+<arg>name=agree</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.613960" elapsed="0.048567"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T16:31:40.663754" level="INFO">Passwords match</msg>
+<arg>Passwords match</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.663552" elapsed="0.000253"/>
+</kw>
+<arg>'Test@123'=='Test@123'</arg>
+<arg>Log</arg>
+<arg>Passwords match</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.662964" elapsed="0.000897"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-02-02T16:31:43.664842" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-02-02T16:31:40.664032" elapsed="3.000947"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:43.665661" level="INFO">Clicking button 'xpath=//input[@type='submit']'.</msg>
+<arg>xpath=//input[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-02-02T16:31:43.665331" elapsed="0.746211"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-02-02T16:31:44.424543" level="INFO">Current page contains text 'Your Account Has Been Created!'.</msg>
+<arg>Your Account Has Been Created!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-02-02T16:31:44.411957" elapsed="0.012744"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${TRUE}</arg>
+<arg>${TRUE}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-02-02T16:31:44.425078" elapsed="0.000389"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-02T16:31:44.425727" elapsed="2.378998"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:31:28.527870" elapsed="18.277202"/>
+</test>
+<status status="PASS" start="2026-02-02T16:31:28.219872" elapsed="18.585887"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Q2website" id="s1" pass="1" fail="0" skip="0">Q2website</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

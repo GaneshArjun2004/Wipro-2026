@@ -1,16 +1,16 @@
-import pytest
-
-def login(user, pwd):
-    if user == "admin" and pwd == "admin123":
-        return "success"
-    return "fail"
 
 
-def test_login_success():
+def login(username, password):
+    if username == "admin" and password == "admin123":
+        return "Login Successful"
+    return "Login Failed"
+
+
+def test_valid_login():
     result = login("admin", "admin123")
-    assert result == "success"
+    assert result == "Login Successful"
 
 
-def test_login_failure():
-    result = login("user", "123")
-    assert result == "fail"
+def test_invalid_login():
+    result = login("user", "wrongpass")
+    assert result == "Login Failed"
