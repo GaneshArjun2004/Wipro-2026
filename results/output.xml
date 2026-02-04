@@ -1,107 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-02T16:24:03.082476" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-03T09:53:01.150903" rpa="false" schemaversion="5">
 <suite id="s1" name="Gitfiles" source="C:\Gitfiles">
-<suite id="s1-s1" name="DAY14" source="C:\Gitfiles\DAY14">
-<suite id="s1-s1-s1" name="DAY14lab" source="C:\Gitfiles\DAY14\DAY14lab">
-<suite id="s1-s1-s1-s1" name="Q1robot" source="C:\Gitfiles\DAY14\DAY14lab\Q1robot.robot">
-<kw name="Setup Suite" type="SETUP">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T16:24:03.454270" level="INFO">Suite setup started</msg>
-<arg>Suite setup started</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T16:24:03.453591" elapsed="0.000937"/>
+<suite id="s1-s1" name="DAY13" source="C:\Gitfiles\DAY13">
+<suite id="s1-s1-s1" name="DAY13lab" source="C:\Gitfiles\DAY13\DAY13lab">
+<suite id="s1-s1-s1-s1" name="Question1" source="C:\Gitfiles\DAY13\DAY13lab\Question1">
+<suite id="s1-s1-s1-s1-s1" name="Source" source="C:\Gitfiles\DAY13\DAY13lab\Question1\Source.robot">
+<test id="s1-s1-s1-s1-s1-t1" name="Open Google" line="5">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-02-03T09:53:02.087549" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
+<arg>https://www.google.com</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-02-03T09:53:02.086757" elapsed="7.149303"/>
 </kw>
-<status status="PASS" start="2026-02-02T16:24:03.452495" elapsed="0.002510"/>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2026-02-03T09:53:09.244471" level="INFO">Page title is 'Google'.</msg>
+<arg>Google</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2026-02-03T09:53:09.237106" elapsed="0.008001"/>
 </kw>
-<test id="s1-s1-s1-s1-t1" name="Verify Get_User" line="26">
-<kw name="Setup Test" type="SETUP">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2026-02-02T16:24:03.461471" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${baseurl}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-02-02T16:24:03.461103" elapsed="0.000857"/>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-02-03T09:53:10.241425" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="google_homepage.png"&gt;&lt;img src="google_homepage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>google_homepage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-02-03T09:53:09.245977" elapsed="0.995820"/>
 </kw>
-<status status="PASS" start="2026-02-02T16:24:03.460643" elapsed="0.001465"/>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-02-03T09:53:10.242356" elapsed="2.539923"/>
 </kw>
-<kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-02-02T16:24:05.521722" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
-<msg time="2026-02-02T16:24:07.789164" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
-<msg time="2026-02-02T16:24:10.241234" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
-<msg time="2026-02-02T16:24:12.302225" level="FAIL">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /users (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/users</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="FAIL" start="2026-02-02T16:24:03.462399" elapsed="8.862029">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /users (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
-</kw>
-<kw name="Status Should Be" owner="RequestsLibrary">
-<arg>200</arg>
-<arg>${response}</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<status status="NOT RUN" start="2026-02-02T16:24:12.324847" elapsed="0.000193"/>
-</kw>
-<kw name="To Json" owner="RequestsLibrary">
-<msg time="2026-02-02T16:24:12.325426" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
-<var>${res_json}</var>
-<arg>${response.content}</arg>
-<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
-<status status="NOT RUN" start="2026-02-02T16:24:12.325276" elapsed="0.006105"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${res_json}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2026-02-02T16:24:12.331689" elapsed="0.000229"/>
-</kw>
-<kw name="Teardown Test" type="TEARDOWN">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T16:24:12.333394" level="INFO">Test teardown completed</msg>
-<arg>Test teardown completed</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T16:24:12.332985" elapsed="0.000632"/>
-</kw>
-<status status="PASS" start="2026-02-02T16:24:12.332412" elapsed="0.001316"/>
-</kw>
-<tag>api</tag>
-<tag>smoke</tag>
-<status status="FAIL" start="2026-02-02T16:24:03.455127" elapsed="8.878840">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /users (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
+<status status="PASS" start="2026-02-03T09:53:02.077892" elapsed="10.705296"/>
 </test>
-<kw name="Teardown Suite" type="TEARDOWN">
-<kw name="Log" owner="BuiltIn">
-<msg time="2026-02-02T16:24:12.345574" level="INFO">Suite teardown completed</msg>
-<arg>Suite teardown completed</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2026-02-02T16:24:12.345200" elapsed="0.000638"/>
-</kw>
-<status status="PASS" start="2026-02-02T16:24:12.344796" elapsed="0.001149"/>
-</kw>
-<status status="FAIL" start="2026-02-02T16:24:03.188235" elapsed="9.157761"/>
+<status status="PASS" start="2026-02-03T09:53:01.340049" elapsed="11.450754"/>
 </suite>
-<status status="FAIL" start="2026-02-02T16:24:03.180691" elapsed="9.168628"/>
+<status status="PASS" start="2026-02-03T09:53:01.330469" elapsed="11.467341"/>
 </suite>
-<status status="FAIL" start="2026-02-02T16:24:03.172189" elapsed="9.181135"/>
+<status status="PASS" start="2026-02-03T09:53:01.321765" elapsed="11.487602"/>
 </suite>
-<status status="FAIL" start="2026-02-02T16:24:03.095842" elapsed="9.265828"/>
+<status status="PASS" start="2026-02-03T09:53:01.306568" elapsed="11.509523"/>
+</suite>
+<status status="PASS" start="2026-02-03T09:53:01.174578" elapsed="11.647898"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">api</stat>
-<stat pass="0" fail="1" skip="0">smoke</stat>
 </tag>
 <suite>
-<stat name="Gitfiles" id="s1" pass="0" fail="1" skip="0">Gitfiles</stat>
-<stat name="DAY14" id="s1-s1" pass="0" fail="1" skip="0">Gitfiles.DAY14</stat>
-<stat name="DAY14lab" id="s1-s1-s1" pass="0" fail="1" skip="0">Gitfiles.DAY14.DAY14lab</stat>
-<stat name="Q1robot" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Gitfiles.DAY14.DAY14lab.Q1robot</stat>
+<stat name="Gitfiles" id="s1" pass="1" fail="0" skip="0">Gitfiles</stat>
+<stat name="DAY13" id="s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13</stat>
+<stat name="DAY13lab" id="s1-s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13.DAY13lab</stat>
+<stat name="Question1" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13.DAY13lab.Question1</stat>
+<stat name="Source" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13.DAY13lab.Question1.Source</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2026-02-02T16:24:05.521722" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
-<msg time="2026-02-02T16:24:07.789164" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
-<msg time="2026-02-02T16:24:10.241234" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /users</msg>
-<msg time="2026-02-02T16:24:12.325426" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>
