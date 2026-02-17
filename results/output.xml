@@ -1,60 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-03T09:53:01.150903" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-13T11:27:47.853845" rpa="false" schemaversion="5">
 <suite id="s1" name="Gitfiles" source="C:\Gitfiles">
-<suite id="s1-s1" name="DAY13" source="C:\Gitfiles\DAY13">
-<suite id="s1-s1-s1" name="DAY13lab" source="C:\Gitfiles\DAY13\DAY13lab">
-<suite id="s1-s1-s1-s1" name="Question1" source="C:\Gitfiles\DAY13\DAY13lab\Question1">
-<suite id="s1-s1-s1-s1-s1" name="Source" source="C:\Gitfiles\DAY13\DAY13lab\Question1\Source.robot">
-<test id="s1-s1-s1-s1-s1-t1" name="Open Google" line="5">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-03T09:53:02.087549" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com'.</msg>
-<arg>https://www.google.com</arg>
-<arg>chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-03T09:53:02.086757" elapsed="7.149303"/>
+<suite id="s1-s1" name="foodie appProject" source="C:\Gitfiles\foodie_appProject">
+<suite id="s1-s1-s1" name="Robot Tests" source="C:\Gitfiles\foodie_appProject\robot_tests">
+<suite id="s1-s1-s1-s1" name="Foodie" source="C:\Gitfiles\foodie_appProject\robot_tests\foodie.robot">
+<test id="s1-s1-s1-s1-t1" name="Register Restaurant" line="7">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-13T11:27:48.056984" level="INFO">Creating Session using : alias=foodie, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>foodie</arg>
+<arg>http://127.0.0.1:5000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-13T11:27:48.056578" elapsed="0.000918"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2026-02-03T09:53:09.244471" level="INFO">Page title is 'Google'.</msg>
-<arg>Google</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2026-02-03T09:53:09.237106" elapsed="0.008001"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-13T11:27:48.058677" level="INFO">${rand} = 6345</msg>
+<var>${rand}</var>
+<arg>__import__('random').randint(1000,9999)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-13T11:27:48.057953" elapsed="0.000925"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-02-03T09:53:10.241425" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="google_homepage.png"&gt;&lt;img src="google_homepage.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>google_homepage.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-02-03T09:53:09.245977" elapsed="0.995820"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-02-13T11:27:48.059690" level="INFO">${name} = SpicyHub_6345</msg>
+<var>${name}</var>
+<arg>SpicyHub_${rand}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2026-02-13T11:27:48.059185" elapsed="0.000626"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2026-02-03T09:53:10.242356" elapsed="2.539923"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-13T11:27:48.060650" level="INFO">${payload} = {'name': 'SpicyHub_6345', 'category': 'Non-Veg', 'location': 'Delhi'}</msg>
+<var>${payload}</var>
+<arg>name=${name}</arg>
+<arg>category=Non-Veg</arg>
+<arg>location=Delhi</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-13T11:27:48.060118" elapsed="0.000642"/>
 </kw>
-<status status="PASS" start="2026-02-03T09:53:02.077892" elapsed="10.705296"/>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-13T11:27:50.074028" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/v1/restaurants</msg>
+<msg time="2026-02-13T11:27:52.312858" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/v1/restaurants</msg>
+<msg time="2026-02-13T11:27:54.756987" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/v1/restaurants</msg>
+<msg time="2026-02-13T11:27:56.801393" level="FAIL">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/v1/restaurants (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</msg>
+<var>${resp}</var>
+<arg>foodie</arg>
+<arg>/api/v1/restaurants</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2026-02-13T11:27:48.061106" elapsed="8.772261">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/v1/restaurants (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${resp}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" start="2026-02-13T11:27:56.833799" elapsed="0.000218"/>
+</kw>
+<status status="FAIL" start="2026-02-13T11:27:48.052868" elapsed="8.781502">ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /api/v1/restaurants (Caused by NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it"))</status>
 </test>
-<status status="PASS" start="2026-02-03T09:53:01.340049" elapsed="11.450754"/>
+<status status="FAIL" start="2026-02-13T11:27:47.923899" elapsed="8.915813"/>
 </suite>
-<status status="PASS" start="2026-02-03T09:53:01.330469" elapsed="11.467341"/>
+<status status="FAIL" start="2026-02-13T11:27:47.915934" elapsed="8.926796"/>
 </suite>
-<status status="PASS" start="2026-02-03T09:53:01.321765" elapsed="11.487602"/>
+<status status="FAIL" start="2026-02-13T11:27:47.901277" elapsed="8.946036"/>
 </suite>
-<status status="PASS" start="2026-02-03T09:53:01.306568" elapsed="11.509523"/>
-</suite>
-<status status="PASS" start="2026-02-03T09:53:01.174578" elapsed="11.647898"/>
+<status status="FAIL" start="2026-02-13T11:27:47.860224" elapsed="8.994002"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Gitfiles" id="s1" pass="1" fail="0" skip="0">Gitfiles</stat>
-<stat name="DAY13" id="s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13</stat>
-<stat name="DAY13lab" id="s1-s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13.DAY13lab</stat>
-<stat name="Question1" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13.DAY13lab.Question1</stat>
-<stat name="Source" id="s1-s1-s1-s1-s1" pass="1" fail="0" skip="0">Gitfiles.DAY13.DAY13lab.Question1.Source</stat>
+<stat name="Gitfiles" id="s1" pass="0" fail="1" skip="0">Gitfiles</stat>
+<stat name="foodie appProject" id="s1-s1" pass="0" fail="1" skip="0">Gitfiles.foodie appProject</stat>
+<stat name="Robot Tests" id="s1-s1-s1" pass="0" fail="1" skip="0">Gitfiles.foodie appProject.Robot Tests</stat>
+<stat name="Foodie" id="s1-s1-s1-s1" pass="0" fail="1" skip="0">Gitfiles.foodie appProject.Robot Tests.Foodie</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-02-13T11:27:50.074028" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/v1/restaurants</msg>
+<msg time="2026-02-13T11:27:52.312858" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/v1/restaurants</msg>
+<msg time="2026-02-13T11:27:54.756987" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError("HTTPConnection(host='127.0.0.1', port=5000): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it")': /api/v1/restaurants</msg>
 </errors>
 </robot>

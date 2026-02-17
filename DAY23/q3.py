@@ -1,0 +1,30 @@
+import requests
+import time
+
+urls = [
+    "https://www.google.com/",
+    "https://www.yahoo.com/",
+    "https://www.rediff.com/",
+    "https://www.amazon.in/"
+]
+
+def downloadfiles(url):
+    try:
+        response = requests.get(url)
+        filename = url.replace("https://", "").replace("/", "") + ".txt"
+
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(response.text)
+
+        print(f"Downloaded: {filename}")
+
+    except Exception as e:
+        print(f"Error downloading {url}: {e}")
+
+starttime = time.time()
+
+for url in urls:
+    downloadfiles(url)
+
+sequentialtime = time.time() - starttime
+print(f"\nSequential download time: {sequentialtime:.2f} seconds")
