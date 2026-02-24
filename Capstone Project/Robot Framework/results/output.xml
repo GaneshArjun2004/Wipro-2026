@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.2 on win32)" generated="2026-02-23T13:39:31.848209" rpa="false" schemaversion="5">
+<suite id="s1" name="TC001 Register" source="C:\Gitfiles\ver 3\tests\TC001_Register.robot">
+<kw name="Log" owner="BuiltIn" type="SETUP">
+<msg time="2026-02-23T13:39:31.915462" level="INFO">═══ TC001 Registration Suite Started ═══</msg>
+<arg>═══ TC001 Registration Suite Started ═══</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-23T13:39:31.915147" elapsed="0.000379"/>
+</kw>
+<test id="s1-t1" name="TC001 User 1 Register" line="31">
+<kw name="Register Single User">
+<msg time="2026-02-23T13:39:31.916716" level="FAIL">Variable '${USERS}' not found.</msg>
+<arg>${USERS}[0]</arg>
+<status status="FAIL" start="2026-02-23T13:39:31.916242" elapsed="0.000512">Variable '${USERS}' not found.</status>
+</kw>
+<tag>registration</tag>
+<tag>tc001</tag>
+<status status="FAIL" start="2026-02-23T13:39:31.915657" elapsed="0.001354">Variable '${USERS}' not found.</status>
+</test>
+<test id="s1-t2" name="TC001 User 2 Register" line="34">
+<kw name="Register Single User">
+<msg time="2026-02-23T13:39:31.918431" level="FAIL">Variable '${USERS}' not found.</msg>
+<arg>${USERS}[1]</arg>
+<status status="FAIL" start="2026-02-23T13:39:31.918006" elapsed="0.000455">Variable '${USERS}' not found.</status>
+</kw>
+<tag>registration</tag>
+<tag>tc001</tag>
+<status status="FAIL" start="2026-02-23T13:39:31.917609" elapsed="0.001021">Variable '${USERS}' not found.</status>
+</test>
+<test id="s1-t3" name="TC001 User 3 Register" line="37">
+<kw name="Register Single User">
+<msg time="2026-02-23T13:39:31.919690" level="FAIL">Variable '${USERS}' not found.</msg>
+<arg>${USERS}[2]</arg>
+<status status="FAIL" start="2026-02-23T13:39:31.919339" elapsed="0.000379">Variable '${USERS}' not found.</status>
+</kw>
+<tag>registration</tag>
+<tag>tc001</tag>
+<status status="FAIL" start="2026-02-23T13:39:31.918975" elapsed="0.000895">Variable '${USERS}' not found.</status>
+</test>
+<test id="s1-t4" name="TC001 User 4 Register" line="40">
+<kw name="Register Single User">
+<msg time="2026-02-23T13:39:31.920930" level="FAIL">Variable '${USERS}' not found.</msg>
+<arg>${USERS}[3]</arg>
+<status status="FAIL" start="2026-02-23T13:39:31.920576" elapsed="0.000382">Variable '${USERS}' not found.</status>
+</kw>
+<tag>registration</tag>
+<tag>tc001</tag>
+<status status="FAIL" start="2026-02-23T13:39:31.920213" elapsed="0.000896">Variable '${USERS}' not found.</status>
+</test>
+<test id="s1-t5" name="TC001 User 5 Register" line="43">
+<kw name="Register Single User">
+<msg time="2026-02-23T13:39:31.922124" level="FAIL">Variable '${USERS}' not found.</msg>
+<arg>${USERS}[4]</arg>
+<status status="FAIL" start="2026-02-23T13:39:31.921768" elapsed="0.000384">Variable '${USERS}' not found.</status>
+</kw>
+<tag>registration</tag>
+<tag>tc001</tag>
+<status status="FAIL" start="2026-02-23T13:39:31.921401" elapsed="0.000900">Variable '${USERS}' not found.</status>
+</test>
+<kw name="Log" owner="BuiltIn" type="TEARDOWN">
+<msg time="2026-02-23T13:39:31.923117" level="INFO">═══ TC001 Registration Suite Completed ═══</msg>
+<arg>═══ TC001 Registration Suite Completed ═══</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-23T13:39:31.922855" elapsed="0.000309"/>
+</kw>
+<doc>TC001 — Register All Users from Excel
+Run this FIRST. TC002_Login.robot runs after.
+
+If email already exists → test is marked PASS with a skip message.
+Never fails due to duplicate email.
+
+Run:
+    robot --outputdir results testsTC001_Register.robot</doc>
+<status status="FAIL" start="2026-02-23T13:39:31.849756" elapsed="0.073445"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="5" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="5" skip="0">registration</stat>
+<stat pass="0" fail="5" skip="0">tc001</stat>
+</tag>
+<suite>
+<stat name="TC001 Register" id="s1" pass="0" fail="5" skip="0">TC001 Register</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2026-02-23T13:39:31.882896" level="ERROR">Error in file 'C:\Gitfiles\ver 3\tests\TC001_Register.robot' on line 12: Importing library 'SeleniumLibrary' failed: ModuleNotFoundError: No module named 'SeleniumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Gitfiles\.venv\Scripts\robot.exe
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64\python314.zip
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64\DLLs
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64\Lib
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64
+  C:\Gitfiles\.venv
+  C:\Gitfiles\.venv\Lib\site-packages</msg>
+<msg time="2026-02-23T13:39:31.913315" level="ERROR">Error in file 'C:\Gitfiles\ver 3\tests\TC001_Register.robot' on line 22: Processing variable file 'C:\Gitfiles\ver 3\config\variables.py' failed: Importing variable file 'C:\Gitfiles\ver 3\config\variables.py' failed: ModuleNotFoundError: No module named 'openpyxl'
+Traceback (most recent call last):
+  File "C:\Gitfiles\ver 3\config\variables.py", line 12, in &lt;module&gt;
+    import openpyxl
+PYTHONPATH:
+  C:\Gitfiles\ver 3\config
+  C:\Gitfiles\.venv\Scripts\robot.exe
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64\python314.zip
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64\DLLs
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64\Lib
+  C:\Users\arjun\AppData\Local\Python\pythoncore-3.14-64
+  C:\Gitfiles\.venv
+  C:\Gitfiles\.venv\Lib\site-packages</msg>
+</errors>
+</robot>

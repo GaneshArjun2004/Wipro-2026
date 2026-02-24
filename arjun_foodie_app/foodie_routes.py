@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
-from arjun_foodie_app.database_ext import db
-from arjun_foodie_app.foodie_models import Restaurant, Dish, User, Order, Rating
+from .database_ext import db
+from .foodie_models import Restaurant, Dish, User, Order, Rating
 
 
 api_bp = Blueprint("api", __name__, url_prefix="/api/v1")

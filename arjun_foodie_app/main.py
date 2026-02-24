@@ -1,6 +1,6 @@
 from flask import Flask
-from arjun_foodie_app.config import Config
-from arjun_foodie_app.database_ext import db
+from .config import Config
+from .database_ext import db
 
 def create_app():
     app = Flask(__name__)
@@ -8,7 +8,7 @@ def create_app():
 
     db.init_app(app)
 
-    from arjun_foodie_app.foodie_routes import api_bp
+    from .foodie_routes import api_bp
 
     app.register_blueprint(api_bp)
 
@@ -21,3 +21,5 @@ def create_app():
 if __name__ == "__main__":
     app = create_app()
     app.run(debug=True,port=5001)
+
+#to run :  python -m arjun_foodie_app.main

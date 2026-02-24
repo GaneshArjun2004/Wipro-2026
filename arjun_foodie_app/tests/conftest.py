@@ -1,6 +1,6 @@
 import pytest
-from foodie_appProject.main import create_app
-from foodie_appProject.database_ext import db
+from main import create_app
+from database_ext import db
 
 @pytest.fixture(scope="session")
 def app():

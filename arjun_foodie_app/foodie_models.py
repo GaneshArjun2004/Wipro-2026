@@ -1,4 +1,4 @@
-from arjun_foodie_app.database_ext import db
+from .database_ext import db
 
 
 class Restaurant(db.Model):
